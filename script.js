@@ -42,7 +42,7 @@ projectCards.forEach((card) => {
     card.addEventListener('click', () => {
         const projectNumber = card.getAttribute('data-project');
         if (projectNumber === '1') {
-            window.location.href = 'https://wrightt2-carleton.github.io/DownTheRabbitHole/play.html';
+            window.location.href = '/Inform7/play.html';
         } else {
             document.getElementById('projects').style.display = 'none';
             document.getElementById('project-display').style.display = 'flex';
