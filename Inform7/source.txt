@@ -1,0 +1,228 @@
+"Down The Rabbit Hole" by Tara Wright
+
+Release along with an interpreter, a website, cover art("Cover.jpg") and the source text.
+
+Chapter 1 - Conversation Rules
+
+Interrogative is a kind of value. 
+The interrogatives are who, what, when, where, how, why, and about.
+
+Current question is an interrogative that varies.
+
+After reading a command:
+	if the player's command includes "[interrogative]":
+		now the current question is the interrogative understood.	
+Understand "talk to [someone]" as a mistake ("To start a conversation, try to ask [the noun] about something.").
+
+Understand "ask [someone] [text]" as asking it about.
+
+Chapter 2 - Mouse Rules
+
+After telling Mouse about something:
+	say "The mouse doesn't seem to care about what your telling it."
+	
+After asking the Mouse about something:
+	respond to the question.
+	
+To respond to the question:
+	repeat through the Table of Mouse Answers:
+		if the topic understood includes topic entry:
+			if the current question is the question type entry:
+				say "[reply entry][paragraph break]";
+				if the topic understood includes "caterpillar":
+					now caterpillar is inquired;
+				rule succeeds;
+
+Table of Mouse Answers
+topic	question type	reply
+"small door"	how	"That door? The key that opens it is in here somewhere. Take it if you want it."
+"small door"	about	"That door? The key that opens it is in here somewhere. Take it if you want it."
+"clocks"	what	"Oh, the clocks? They never seem to keep the right time. They're more like... reminders. Reminders of something forgotten."
+"clocks"	about	"Oh, the clocks? They never seem to keep the right time. They're more like... reminders. Reminders of something forgotten."
+"mouse hole"	where	"That hole? It's where I live. You could fit in if you were small enough, I suppose."
+"mouse hole"	about	"That hole? It's where I live. You could fit in if you were small enough, I suppose."
+"key"	what	"Ah, the tiny key. I've seen it around. It might open something... or nothing at all."
+"key"	about	"Ah, the tiny key. I've seen it around. It might open something... or nothing at all."
+"the cupboard"	where	"The cupboard? It's full of clocks, all broken, though. You won’t find anything useful there."
+"the cupboard"	about	"The cupboard? It's full of clocks, all broken, though. You won’t find anything useful there."
+"the table"	what	"The table? Oh, that's where the cookies are. I've never been fond of sweets, but you should try one."
+"the table"	about	"The table? Oh, that's where the cookies are. I've never been fond of sweets, but you should try one."
+"cookie"	why	"Why the cookie? Well, sometimes you need a little help to see the world differently."
+"cookie"	about	"Why the cookie? Well, sometimes you need a little help to see the world differently."
+"giants and mice"	how	"Giants and mice? We see things very differently. We don't have the same perspective, you know."
+"giants and mice"	about	"Giants and mice? We see things very differently. We don't have the same perspective, you know."
+"home"	where	"Home? Well, it's not much, just a small hole in the wall. But it's cozy enough for me."
+"home"	about	"Home? Well, it's not much, just a small hole in the wall. But it's cozy enough for me."
+"your name"	what	"I don't really have a name. I'm just... the mouse. But you can call me anything you like."
+"the chest"	what	"That chest? Full of more clocks, probably. They seem to be everywhere, don't they?"
+"your plans"	what	"Plans? Oh, I don't really make plans. I'm a mouse. I just go where the moment takes me."
+"the note"	what	"The note? It's a riddle of sorts. I don't think I fully understand it, but it might lead you to something important."
+"getting out"	how	"Getting out? If you can solve the mystery of the door, the key, and the clocks, you'll find your way. But hurry—time is always running out in here."
+"why the clocks"	why	"Why all the clocks? I don't really know. But clocks are the only things that understand time. Or maybe they're just reminders of things that are lost."
+"the chest's contents"	what	"If you're thinking about opening that chest, be careful. It's probably just more broken clocks. Nothing useful, I bet."
+"the key's purpose"	why	"Why does the key exist? Perhaps it's just part of the puzzle. Maybe it unlocks more than just the door. But if you ask me, it's more a symbol than a solution."
+"the door to nowhere"	where	"The door? Ah, that's where it all ends, or begins. Some say it's a way out, others say it's a way in. But for now, you're stuck here with me."
+"Caterpillar"	about	"[The Mouse] looks at you with a curious expression. 'The caterpillar? Hmm... Let me check on him for you.'[paragraph break] *The Mouse scurries away and comes back after a few minutes*[paragraph break] 'He should talk to you now!'[paragraph break]"
+
+Chapter 3 - Caterpillar Rules
+
+After telling the Caterpillar about something:
+	say "The caterpillar doesn't seem to care too much."
+	
+After asking the Caterpillar about something:
+	respond to the query.
+	
+To respond to the query:
+	if size is 1:
+		say "The caterpillar is no longer in the clearing...at least as far as you can tell. You're too big to see it.";
+		rule succeeds;
+	otherwise:
+		if the caterpillar is inquired:
+			repeat through the Table of Caterpillar Answers:
+				if the topic understood includes topic entry:
+					if the current question is the question type entry:
+						say "[reply entry][paragraph break]";
+						rule succeeds;
+		otherwise:
+			say "He doesn't seem like he wants to talk to you. Maybe ask the Mouse about him?"
+	
+Table of Caterpillar Answers
+topic	question type	reply
+"caterpillar/himself/him"	about	"Me? I'm just a caterpillar. A creature that changes, grows, and learns. But perhaps you should ask something more specific."
+"the leaf"	about	"The leaf? Ah, yes... it's a fine place to rest. It holds the wisdom of the winds."
+"the leaf"	what	"It is a leaf, a place where one might reflect on the turning of time... but not much else to it."
+"the bottle"	about	"The bottle? Perhaps it contains something that will change your perspective... or not."
+"the bottle"	what	"A small bottle with a curious label. 'Drink me' it says. But the question is—are you ready to see the world through new eyes?"
+"door"	about	"Ah, the door. A door that leads nowhere and everywhere at once. The choice, it seems, is yours to make."
+"door"	what	"It's a door, yes. But not just any door. It leads beyond, somewhere uncertain. Will you go through?"
+"giants"	what	"Giants? They are creatures of great size, but little understanding. Do you think yourself a giant now?"
+"giants"	how	"Giants view the world from a distance, with little regard for the smallness of things. Perhaps that's why they don't understand."
+"mice"	what	"Mice? Ah, yes, the tiny creatures who scurry about unnoticed. But in their smallness, they see what the giants miss."
+"mice"	how	"Mice live in a world of close things, of the small and unnoticed. Perhaps you understand that world better now?"
+"your name"	what	"My name? I have no need for one. I am what I am. Perhaps you have a name for me?"
+"change"	why	"Why change? It is the only constant. To remain unchanged is to stop living."
+"change"	how	"Change happens when we least expect it, when we grow and shed our past selves. Can you feel it happening to you?"
+"the puzzle"	about	"The puzzle? Ah, the puzzle is life itself. But solving it? That depends on the questions you ask."
+"the puzzle"	what	"There is no single answer to the puzzle of life. It’s all in the questions. Have you asked the right ones?"
+"the world"	what	"The world? It's not what it seems, and perhaps never was. But who are we to judge what is real?"
+"the world"	how	"The world is vast, full of hidden truths. Perhaps you’ll find one, or maybe the world itself will change around you."
+"nowhere"	about	"The door to nowhere? Well you need to be a bit bigger to see it."
+"nowhere"	where	"The door to nowhere? Well you need to be a bit bigger to see it."
+	
+Chapter 4 - Game Rules
+
+The block giving rule is not listed in the check giving it to rules.
+
+The block drinking rule is not listed in any rulebook.
+
+Size is a number that varies. Size is initially 1.
+
+When play begins: 
+	say "You followed a little rabbit and tripped down a hole.";
+	say "After falling for a long time you have landed softly in a room.";
+
+To end the final scene:
+	end the story saying "You have reached the door to nowhere. Well...it does lead to nowhere... I'm afraid your stuck here. [paragraph break] Oh well."
+
+Chapter 5 - The Clock Room
+
+The Clock Room is a room. "[If we have eaten a cookie] This strange room is covered in clocks, but now everything is much larger than you. Clocks are everywhere all over the walls. There is a table in the middle of the room that you cannot reach. There is a cupboard to the side of the right side of the room and a chest to the left. To the north is a very small door. You have noticed a small mouse hole to the south of the room. [otherwise]This strange room is covered in clocks. Clocks everywhere...all over the walls. There is a table in the middle of the room with a bowl of cookies and a note on top. There is a cupboard to the side of the right side of the room and a chest to the left. To the north is a very small door."
+
+The small door is a door.
+	The small door is north of the Clock Room and south of the Garden.
+	It is a lockable and locked.
+	The matching key of the small door is the tiny key. 
+
+Instead of going through the tiny opening when Size is 1:
+    say "You are too big to enter the hole in the wall."
+
+Instead of entering the table when Size is 0:
+    say "You can only see the bottom of the table... It is much too big to look at now.";
+
+Instead of opening the cupboard when Size is 0:
+    say "You can't reach the cupboard right now.";
+
+The cupboard is in the Clock Room. The cupboard is an enterable closed container. It is fixed in place. The cupboard can be opened. "[If opened] There are just more clocks.... These seem to just be broken ones."
+
+The Clocks is a supporter in the Clock Room. The description of the clocks is "These clocks are all over the walls. None of them show the same time. A couple are even spinning."
+
+The table is in the Clock Room. The table is an enterable supporter. It is fixed in place. The description of the table is "[If we have eaten a cookie] You are now to small to look at the table. [otherwise]There is a bowl full of cookies, they say 'Eat Me'. The note on the table reads 'Find the door that leads to nowhere. To find nowhere you must see see like giants and mice do.'".
+
+The bowl is part of the table. The bowl is an openable container. The bowl contains a cookie. The cookie is edible.
+
+After eating the cookie: 
+	now size is 0;
+	say "Everything has gotten much bigger now. Maybe you have shrunk?".
+
+Chapter 6 - The Mouse Hole
+
+The Hole is a room. 
+	The Hole contains the tiny key.
+	The tiny key unlocks the small door. 
+	The tiny opening is north of the Hole and south of the Clock Room. 
+	The tiny opening is an door. 
+	The tiny opening is open.
+
+The Mouse is a person in the Hole. The description of the mouse is "Its a gray mouse. The mouse is just as big as you."
+
+Chapter 7 - The Garden
+
+The Garden is a room. "[if we have drunk the bottle of liquid] The path that was once looming over you is much smaller now. You can now notice that there is a small house off to the east. [otherwise]This area is filled with plants some are taller than you, some are your height. There is a clearing to the north... Maybe something is over there."
+
+The plants are a supporter in the Garden. The description of the plants is "These plants seem to be humming a tune. You can't help but join in."
+
+Chapter 8 - The House Porch
+
+The Front is a room. "After a second look it seems the house is abandoned. Maybe a look inside? There is a large door to the north of you.".
+	The Front is east of the Garden. 
+	The Garden is west of the Front.
+		
+Chapter 9 - The House
+
+The House is a room. The description of the House is "The air is thick with dust, and the floor creaks underfoot as though it hasn’t borne weight in years. Broken furniture is scattered across the room, draped in tattered sheets and cobwebs. The walls are lined with peeling wallpaper, faded and torn, exposing the cracked plaster beneath. A single window, its glass dirty and partially boarded up, lets in a weak sliver of light that struggles to illuminate the gloom. The silence here is oppressive, as if the house itself is holding its breath, waiting for something—or someone—to return.
+
+In the far corner of the room lies a bed, its once-pristine linens now stained and threadbare. The frame is sagging, and the mattress is lumpy, covered in a layer of dust and neglect. Despite its condition, it looks strangely inviting, as if it has been waiting for someone to lie upon it and escape the oppressive stillness of the room."
+	The Large Door is a door. 
+		The Large door is an openable closed door.
+		The Large door is south of the House and north of the Front.
+
+The Bed is an enterable supporter in the House. 
+
+Instead of entering the Bed:
+    end the story saying "You're getting very sleepy... Maybe you will take a nap.[paragraph break] It doesn't seem like you'll be waking up from this dream. I suppose you'll be staying here forever."
+
+Chapter 10 - The Clearing
+
+The Clearing is a room. "[if we have drunk the bottle of liquid] The Clearing is now a small space under your feet, just big enough for you not to touch the surrounding flowers. The caterpillar seems to have fled... You have noticed a big door at the very edge of the clearing. [otherwise] The clearing is a wide open space. The borders are covered in tall plants and flowers. There is a Caterpillar sitting on a leaf near the edge." 
+	The Clearing is north of the Garden. 
+	The Garden is south of the Clearing.
+
+The mystery door is an openable closed door.
+	The mystery door is north of the Clearing.
+
+Instead of opening the mystery door when Size is 0:
+	say "This door is far to big for you to open."
+
+Instead of opening the mystery door when Size is 1:
+	end the final scene.
+
+The Caterpillar is a person in the Clearing. The description of the Caterpillar is "It's a big blue caterpillar. It's much bigger than you, but he might still talk to you."
+
+The caterpillar can be inquired or uninquired. The caterpillar is uninquired.
+
+A thing can be drinkable. A thing is usually not drinkable.
+
+The pile of leaves is in the Clearing. 
+	The pile of leaves is an openable closed container. 
+	It is fixed in place. 
+	The pile of leaves contains a bottle of liquid. 
+	The bottle of liquid is a thing. 
+	The bottle of liquid is drinkable. 
+	The pile of leaves can be opened. 
+	"[if opened] You push the pile of leaves aside and there is a tiny bottle filled with liquid underneath. The little tag attatched says 'drink me'."
+
+Understand "bottle" as bottle of liquid.
+
+After drinking the bottle of liquid: 
+	now size is 1;
+	say "Everything has gotten much smaller now. Maybe you have grown?".
