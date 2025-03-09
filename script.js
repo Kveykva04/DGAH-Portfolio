@@ -43,6 +43,20 @@ function loadProject(projectName) {
     }
 }
 
+function showCredits() {
+    const projectDisplay = document.getElementById('project-display');
+    const projectsSection = document.getElementById('projects');
+    projectDisplay.style.display = 'block';
+    projectsSection.style.display = 'none';
+    document.getElementById('canvas-container').innerHTML = '<h2>Credits</h2><p>Portfolio created by Tara Wright with generative assist by GitHub Copilot.</p><p>The Dragon Cave game was created with image generation help of ChatGPT and built based on examples provided by Anastasia Salter.</p><p>The Inform7 game was created based on examples provided by Inform7 and generative assists by ChatGPT.</p><p>The Up Downs project was created with the Rock Paper Scissors example by Anastasia Salter, a Teachable Machine trained by Tara Wright, and generative assists by ChatGPT.</p>';
+    document.getElementById('canvas-container').style.display = 'flex';
+    document.getElementById('canvas-container').style.flexDirection = 'column';
+    document.getElementById('canvas-container').style.alignItems = 'center';
+    document.getElementById('canvas-container').style.textAlign = 'center';
+    document.getElementById('canvas-container').style.padding = '0 20px';
+    document.getElementById('canvas-container').style.fontSize = '18px';
+}
+
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card) => {
     card.addEventListener('click', () => {
@@ -53,6 +67,8 @@ projectCards.forEach((card) => {
             document.getElementById('project-display').style.display = 'block';
             document.getElementById('projects').style.display = 'none';
             document.getElementById('canvas-container').innerHTML = '<iframe src="DragonCave/index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>';
+        } else if (projectNumber === 'credits') {
+            showCredits();
         } else {
             document.getElementById('projects').style.display = 'none';
             document.getElementById('project-display').style.display = 'flex';
