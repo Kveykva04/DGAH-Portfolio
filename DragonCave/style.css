@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgba(0, 0, 0, 1);
+    background-size: cover;
+    background-color: #00008B; /* Dark blue background color */
+}
+
+canvas {
+  display: block;
+  background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the canvas */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}

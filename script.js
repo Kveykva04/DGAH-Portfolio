@@ -37,12 +37,22 @@ function displayProject(projectNumber) {
     text(`Project ${projectNumber}`, width / 2, height / 2);
 }
 
+function loadProject(projectName) {
+    if (projectName === 'ml5project') {
+        window.location.href = '/ml5project/index.html';
+    }
+}
+
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card) => {
     card.addEventListener('click', () => {
         const projectNumber = card.getAttribute('data-project');
         if (projectNumber === '1') {
             window.location.href = '/Inform7/play.html';
+        } else if (projectNumber === '2') {
+            document.getElementById('project-display').style.display = 'block';
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById('canvas-container').innerHTML = '<iframe src="DragonCave/index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>';
         } else {
             document.getElementById('projects').style.display = 'none';
             document.getElementById('project-display').style.display = 'flex';
@@ -53,9 +63,9 @@ projectCards.forEach((card) => {
     });
 });
 
-document.getElementById('back-button').addEventListener('click', () => {
-    document.getElementById('projects').style.display = 'flex';
+document.getElementById('back-button').addEventListener('click', function() {
     document.getElementById('project-display').style.display = 'none';
+    document.getElementById('projects').style.display = 'block';
     document.querySelector('header').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
 });
