@@ -62,11 +62,11 @@ projectCards.forEach((card) => {
     card.addEventListener('click', () => {
         const projectNumber = card.getAttribute('data-project');
         if (projectNumber === '1') {
-            window.location.href = 'Inform7/play.html';
+            window.location.href = '/Inform7/play.html';
         } else if (projectNumber === '2') {
             document.getElementById('project-display').style.display = 'block';
             document.getElementById('projects').style.display = 'none';
-            document.getElementById('canvas-container').innerHTML = '<iframe src="DragonCave/index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>';
+            document.getElementById('canvas-container').innerHTML = '<iframe src="/DragonCave/index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>';
         } else if (projectNumber === 'credits') {
             showCredits();
         } else {
