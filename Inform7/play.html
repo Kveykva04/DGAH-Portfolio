@@ -32,7 +32,13 @@ outspacing: 0     // gap between windows and edge of gameport
 <body class="play">
 <div class="container">
 <div class="coverimage"><span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></span></div>
-<button id="back-button" onclick="window.location.href='/DAGH-Portfolio/index.html'">Back to Projects</button>
+<button id="back-button" onclick="goBackToProjects()">Back to Projects</button>
+<script>
+function goBackToProjects() {
+    const baseUrl = window.location.origin;
+    window.location.href = `${baseUrl}/DAGH-Portfolio/index.html`;
+}
+</script>
 <div class="links">
 <div class="smalltitle">Down The Rabbit Hole</div>
 <ul>
