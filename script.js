@@ -62,7 +62,7 @@ projectCards.forEach((card) => {
     card.addEventListener('click', () => {
         const projectNumber = card.getAttribute('data-project');
         if (projectNumber === '1') {
-            window.location.href = 'Inform7/play.html';
+            window.location.href = '/Inform7/play.html';
         } else if (projectNumber === '2') {
             document.getElementById('project-display').style.display = 'block';
             document.getElementById('projects').style.display = 'none';
